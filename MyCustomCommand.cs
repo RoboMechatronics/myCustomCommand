@@ -13,10 +13,12 @@ namespace MyCustomCommand
     public class MyCustomCommand : SwAddin
     {
         #region Private Members
+
         private SldWorks swApp = null;
         private int swCookie;
         CommandManager swCommandManager;
         private int swCommandGroupID = 0;
+
         #endregion Private Members
 
         struct Point
@@ -293,7 +295,9 @@ namespace MyCustomCommand
             swModel.ClearSelection2(true);
             swModel.ForceRebuild3(true);
         }
+        #endregion #region Create Cylinder
 
+        #region #region Create Sphere
         public void CreateSphere()
         {
             ModelDoc2 swModel = (ModelDoc2)swApp.ActiveDoc;
@@ -365,6 +369,16 @@ namespace MyCustomCommand
             swModel.ForceRebuild3(true);
         }
 
+        #endregion #region Create Sphere
+
+        #region Enable Method
+        /// <summary>
+        /// Optional function that controls the state of the item; if specified, then SOLIDWORKS calls this function before displaying the item
+        /// if return 1, the Solidworks deselects and enables the item; this is the default state if no update function is specified.
+        /// See detail about AddCommandItem2() method here: https://help.solidworks.com/2023/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.icommandgroup~addcommanditem2.html
+        /// </summary>
+        /// <returns></returns>
+
         public int EnableCreateRectangleBox()
         {
             return 1;
@@ -377,7 +391,7 @@ namespace MyCustomCommand
         {
             return 1;
         }
-        #endregion
+        #endregion Enable Method
 
         #region COM Registration
         [ComRegisterFunction]
