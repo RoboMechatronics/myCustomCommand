@@ -220,6 +220,8 @@ namespace MyCustomCommand
             
             swModel.ClearSelection2(true);
             swModel.ForceRebuild3(true);
+
+            swModel.ViewZoomtofit2();
         }
         #endregion
 
@@ -294,6 +296,8 @@ namespace MyCustomCommand
 
             swModel.ClearSelection2(true);
             swModel.ForceRebuild3(true);
+
+            swModel.ViewZoomtofit2();
         }
         #endregion #region Create Cylinder
 
@@ -367,6 +371,8 @@ namespace MyCustomCommand
 
             swModel.ClearSelection2(true);
             swModel.ForceRebuild3(true);
+
+            swModel.ViewZoomtofit2();
         }
 
         #endregion #region Create Sphere
